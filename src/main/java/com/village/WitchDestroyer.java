@@ -13,12 +13,13 @@ public class WitchDestroyer {
 		System.out.println("SecondVillagerKills -> " + SecondVillagerKills);
 		if(firstVillagerKills > 0 && SecondVillagerKills > 0) {
 			avarageKills = (firstVillagerKills + SecondVillagerKills)/2.0;
+		}else {
+			return (double) -1;
 		}
 
+		
 		System.out.println("avarageKills -> " + avarageKills);
 		return avarageKills;
-
-
 	}
 
 
@@ -33,8 +34,14 @@ public class WitchDestroyer {
 			years = villager.getDeathYear() - villager.getDeathAge();
 		}
 
-		if(years < 0) {
+		if(years < 0 ) {
 			return -1;
+		}
+
+		if(villager != null ) {
+			if(villager.getDeathAge() < 0 || villager.getDeathYear() < 0 ) {
+				return  -1;
+			}
 		}
 		kills = killCalculator(years);
 
