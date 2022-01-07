@@ -4,28 +4,26 @@ public class WitchDestroyer {
 
 
 	// Method to find the average number of people the witch killed on year of birth of those people
-	public Double findAvarageKills(Villager firstVillager, Villager secondVillager) {
-		Double avarageKills = null;
+	public double findAverageKills(Villager firstVillager, Villager secondVillager) {
+		double averageKills = -1;
 
 		int firstVillagerKills = getKills(firstVillager);
 		int SecondVillagerKills = getKills(secondVillager);
 		System.out.println("firstVillagerKills -> " + firstVillagerKills);
 		System.out.println("SecondVillagerKills -> " + SecondVillagerKills);
 		if(firstVillagerKills > 0 && SecondVillagerKills > 0) {
-			avarageKills = (firstVillagerKills + SecondVillagerKills)/2.0;
-		}else {
-			return (double) -1;
+			averageKills = (firstVillagerKills + SecondVillagerKills)/2.0;
 		}
 
 		
-		System.out.println("avarageKills -> " + avarageKills);
-		return avarageKills;
+		System.out.println("avarageKills -> " + averageKills);
+		return averageKills;
 	}
 
 
 
 	// Method to get the kills per villager
-	public Integer getKills(Villager villager) {
+	public int getKills(Villager villager) {
 
 		int years = 0;
 		int kills = 0;
@@ -50,7 +48,7 @@ public class WitchDestroyer {
 
 
 	// Method to calculate the kills given the years
-	public Integer killCalculator(int Controlyears) {
+	public int killCalculator(int Controlyears) {
 
 		int years = Controlyears, firstKill = 0, secondKill = 1;
 		int totalKills = 0;
